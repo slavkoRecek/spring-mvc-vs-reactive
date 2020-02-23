@@ -23,3 +23,6 @@
 hs_err_pid*
 /spring-mvc-vs-reactive.iml
 /.idea/
+/coin-track-mvc/target/
+/coin-track-mvc/coin-track-mvc.iml
+/coin-track-mvc/.idea/

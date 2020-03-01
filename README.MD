@@ -20,9 +20,8 @@ Performance tests were executed using jmeter. One ca use following command to pe
 The CoinTrack1.jmx test plan performs requests to the app API in X concurrent threads.
 
 #### Test Setup 1
-- 12 threads (8 server, 4 db)
+- 12 threads
 - 16MB of RAM
-- MongoDb running on same CPU
 - 50 threads
 - 5 minutes duration
 
@@ -33,19 +32,6 @@ The CoinTrack1.jmx test plan performs requests to the app API in X concurrent th
 | 79.71      | 625.92| MVC |
 | 86.77      | 575.2      |   Reacive |
 
-#### Test Setup 2
-- 12 threads (8 server, 2 db)
-- 16MB of RAM
-- MongoDb running on same CPU
-- 50 threads
-- 5 minutes duration
-
-#### Test Results
-
-| Average Response [ms]|Troughput [trans/s]| App  |
-| ------------- |-------------| -----|
-| 99.63 | 500.98 | MVC |
-| 80.24 | 621.97 | Reacive |
 
 ## Conclusion
 

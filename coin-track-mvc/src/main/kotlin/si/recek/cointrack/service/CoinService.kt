@@ -8,7 +8,7 @@ import si.recek.cointrack.repository.CoinValueRepository
 @Service
 class CoinService(private val coinValueRepository: CoinValueRepository) {
     fun getAllValuesForCoin(coinSymbol: String): CoinValues {
-        return CoinValues(coinSymbol, coinValueRepository.getAllByCoinSymbol(coinSymbol).sortedBy {it.time})
+        return coinValueRepository.getAllByCoinSymbol(coinSymbol)
     }
 
 }

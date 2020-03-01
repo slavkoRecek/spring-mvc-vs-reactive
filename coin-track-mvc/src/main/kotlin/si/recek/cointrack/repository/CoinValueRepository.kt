@@ -1,14 +1,22 @@
 package si.recek.cointrack.repository
 
-import si.recek.cointrack.model.Coin
-import org.springframework.data.mongodb.repository.MongoRepository
+import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.stereotype.Repository
-import si.recek.cointrack.model.CoinValue
-import java.time.LocalDateTime
+import si.recek.cointrack.model.CoinValues
 
 @Repository
-interface CoinValueRepository: MongoRepository<CoinValue,String> {
+class CoinValueRepository(val objectMapper: ObjectMapper) {
 
-    fun getAllByCoinSymbol(symbol: String) : List<CoinValue>;
-    fun getAllByTimeBetween(from:LocalDateTime, until:LocalDateTime)
+    val staticCoinValue: CoinValues = initializeCoinValues()
+
+    private fun initializeCoinValues(): CoinValues {
+        return objectMapper.readValue(CoinValueRepository::class.java.classLoader.getResource("staticResponse.json").readText(),
+                CoinValues::class.java)
+    }
+
+
+    fun getAllByCoinSymbol(symbol: String): CoinValues {
+        return staticCoinValue
+    }
+
 }

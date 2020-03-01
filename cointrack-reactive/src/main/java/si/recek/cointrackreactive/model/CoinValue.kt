@@ -1,4 +1,4 @@
-package si.recek.cointrack.model
+package si.recek.cointrackreactive.model
 
 import com.fasterxml.jackson.annotation.JsonFormat
 import com.fasterxml.jackson.annotation.JsonIgnore

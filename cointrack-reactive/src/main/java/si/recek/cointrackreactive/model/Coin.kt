@@ -1,4 +1,4 @@
-package si.recek.cointrack.model
+package si.recek.cointrackreactive.model
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
